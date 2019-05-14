@@ -24,19 +24,27 @@ const geoFetch = async location => {
   }
 };
 
+// Country code could be located in a different position depending on the input, this function will find it regarless
+const findCountryCode = addressArray => {
+  const index = addressArray.findIndex(element => {
+    return element.types[0] === "country";
+  });
+
+  return index;
+};
+
 // Form location object
 export const geoLocation = async location => {
   const sanitizeLoc = sanitizeLocation(location);
   const geoResponse = await geoFetch(sanitizeLoc);
-  console.log(geoResponse.results);
   const geoLoc = geoResponse.results[0];
+  const countryIndex = findCountryCode(geoLoc.address_components);
   const locationObj = {
     id: geoLoc.place_id,
     address: geoLoc.formatted_address,
     lat: geoLoc.geometry.location.lat,
     lng: geoLoc.geometry.location.lng,
-    countryCode:
-      geoLoc.address_components[geoLoc.address_components.length - 1].short_name
+    countryCode: geoLoc.address_components[countryIndex].short_name
   };
 
   return locationObj;
