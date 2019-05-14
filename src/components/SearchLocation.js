@@ -16,7 +16,10 @@ export class SearchLocation extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    alert(this.state.value);
+    this.props.addLocation(this.state.value);
+    this.setState({
+      value: ""
+    });
   }
 
   render() {
