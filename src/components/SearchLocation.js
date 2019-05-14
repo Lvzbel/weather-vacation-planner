@@ -26,6 +26,7 @@ export class SearchLocation extends Component {
   }
 
   render() {
+    const value = this.state.value;
     return (
       <form className="SearchLocation" onSubmit={this.handleSubmit}>
         <label htmlFor="location" className="SearchLocation-label">
@@ -36,10 +37,12 @@ export class SearchLocation extends Component {
           id="location"
           className="SearchLocation-input"
           placeholder="Address or Location"
-          value={this.state.value}
+          value={value}
           onChange={this.handleChange}
         />
-        <button className="SearchLocation-button">Get Location</button>
+        <button disabled={value.length < 3} className="SearchLocation-button">
+          Get Location
+        </button>
       </form>
     );
   }
