@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import { SearchLocation } from "./SearchLocation";
 import { geoLocation } from "../functions/Geo";
 import { VacationSpot } from "./VacationSpot";
+import "react-dates/initialize";
+import { SingleDatePicker } from "react-dates";
+import "react-dates/lib/css/_datepicker.css";
+import moment from "moment";
 
 export class WeatherVacation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userPlaces: []
+      userPlaces: [],
+      date: moment(),
+      focused: false
     };
     this.addLocation = this.addLocation.bind(this);
   }
@@ -40,6 +46,15 @@ export class WeatherVacation extends Component {
           the weather was the past 3 years the same date.
         </h4>
         <SearchLocation addLocation={this.addLocation} />
+
+        <SingleDatePicker
+          date={this.state.date}
+          onDateChange={date => this.setState({ date })}
+          focused={this.state.focused}
+          onFocusChange={({ focused }) => this.setState({ focused })}
+          id="calendar"
+        />
+
         {vacationLocations}
       </div>
     );
