@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { SearchLocation } from "./SearchLocation";
 import { geoLocation } from "../functions/Geo";
+import { VacationSpot } from "./VacationSpot";
 
 export class WeatherVacation extends Component {
   constructor(props) {
@@ -28,6 +29,9 @@ export class WeatherVacation extends Component {
   }
 
   render() {
+    const vacationLocations = this.state.userPlaces.map(loc => (
+      <VacationSpot spotInfo={loc} key={loc.id} />
+    ));
     return (
       <div>
         <h1 className="App-title">Decide where your next vacation will be.</h1>
@@ -36,6 +40,7 @@ export class WeatherVacation extends Component {
           the weather was the past 3 years the same date.
         </h4>
         <SearchLocation addLocation={this.addLocation} />
+        {vacationLocations}
       </div>
     );
   }
