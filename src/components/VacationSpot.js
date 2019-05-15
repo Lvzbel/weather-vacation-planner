@@ -12,12 +12,12 @@ export class VacationSpot extends Component {
   }
 
   async componentDidMount() {
-    const { passOne, passTwo, passThree } = this.props;
+    const { pastOne, pastTwo, pastThree } = this.props;
     const { lat, lng } = this.props.spotInfo;
     const pastWeather = [];
-    const oneYear = await darkFetch(lat, lng, passOne);
-    const twoYears = await darkFetch(lat, lng, passTwo);
-    const threeYears = await darkFetch(lat, lng, passThree);
+    const oneYear = await darkFetch(lat, lng, pastOne);
+    const twoYears = await darkFetch(lat, lng, pastTwo);
+    const threeYears = await darkFetch(lat, lng, pastThree);
     pastWeather.push(oneYear, twoYears, threeYears);
     this.setState({ pastWeather });
   }

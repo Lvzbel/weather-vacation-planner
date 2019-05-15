@@ -40,7 +40,7 @@ export class WeatherVacation extends Component {
       <VacationSpot
         spotInfo={loc}
         key={loc.id}
-        passOne={pastTime(this.state.date, 1)}
+        pastOne={pastTime(this.state.date, 1)}
         pastTwo={pastTime(this.state.date, 2)}
         pastThree={pastTime(this.state.date, 3)}
       />
