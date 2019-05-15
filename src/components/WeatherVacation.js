@@ -6,6 +6,7 @@ import "react-dates/initialize";
 import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import moment from "moment";
+import { pastTime } from "../functions/time";
 
 export class WeatherVacation extends Component {
   constructor(props) {
@@ -36,7 +37,13 @@ export class WeatherVacation extends Component {
 
   render() {
     const vacationLocations = this.state.userPlaces.map(loc => (
-      <VacationSpot spotInfo={loc} key={loc.id} />
+      <VacationSpot
+        spotInfo={loc}
+        key={loc.id}
+        passOne={pastTime(this.state.date, 1)}
+        pastTwo={pastTime(this.state.date, 2)}
+        pastThree={pastTime(this.state.date, 3)}
+      />
     ));
     return (
       <div>
