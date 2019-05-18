@@ -41,6 +41,15 @@ export class WeatherVacation extends Component {
     this.setState({ userPlaces: storedPlaces });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.userPlaces.length !== this.state.userPlaces.length) {
+      window.localStorage.setItem(
+        "userPlaces",
+        JSON.stringify(this.state.userPlaces)
+      );
+    }
+  }
+
   render() {
     const vacationLocations = this.state.userPlaces.map(loc => (
       <VacationSpot
