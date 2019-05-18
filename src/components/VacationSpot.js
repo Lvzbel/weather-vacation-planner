@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { darkBuildData } from "../functions/darkFetch";
+import WeatherCard from "./WeatherCard";
 
 export class VacationSpot extends Component {
   constructor(props) {
@@ -37,6 +38,9 @@ export class VacationSpot extends Component {
 
   render() {
     const { id, address, lat, lng, countryCode } = this.props.spotInfo;
+    const pastWeatherCards = this.state.pastWeather.map(weather => (
+      <WeatherCard key={weather.id} weather={weather} />
+    ));
     return (
       <div className="VacationSpot">
         <h3 className="VacationSpot-title">{address}</h3>
@@ -44,6 +48,12 @@ export class VacationSpot extends Component {
         <button className="VacastionSpot-remove" onClick={this.clickRemove}>
           X
         </button>
+        <div className="VacationSpot-container">
+          <div className="VacationSpot-past">{pastWeatherCards}</div>
+          <div className="VacationSpot-current">
+            <WeatherCard weather={this.state.currentWeather} />
+          </div>
+        </div>
       </div>
     );
   }
