@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { darkFetch } from "../functions/darkFetch";
+import { darkBuildData } from "../functions/darkFetch";
 
 export class VacationSpot extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentDate: moment(),
-      pastWeather: []
+      pastWeather: [],
+      currentWeather: {}
     };
   }
 
   async componentDidMount() {
     const { pastOne, pastTwo, pastThree } = this.props;
     const { lat, lng } = this.props.spotInfo;
+    console.log("One: ", pastOne);
+    console.log("Two: ", pastTwo);
+    console.log("Three: ", pastThree);
+    const oneYear = await darkBuildData(lat, lng, pastOne);
+    const twoYears = await darkBuildData(lat, lng, pastTwo);
+    const threeYears = await darkBuildData(lat, lng, pastThree);
+    const currentWeather = await darkBuildData(lat, lng);
     const pastWeather = [];
-    const oneYear = await darkFetch(lat, lng, pastOne);
-    const twoYears = await darkFetch(lat, lng, pastTwo);
-    const threeYears = await darkFetch(lat, lng, pastThree);
+
     pastWeather.push(oneYear, twoYears, threeYears);
-    this.setState({ pastWeather });
+
+    this.setState({ pastWeather, currentWeather });
   }
 
   render() {
