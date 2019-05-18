@@ -1,4 +1,5 @@
 import { geoAPI } from "../API/api";
+import uuid from "uuid/v4";
 
 // Cleans and preps user input
 const sanitizeLocation = userInput => {
@@ -40,7 +41,7 @@ export const geoLocation = async location => {
   const geoLoc = geoResponse.results[0];
   const countryIndex = findCountryCode(geoLoc.address_components);
   const locationObj = {
-    id: geoLoc.place_id,
+    id: uuid(),
     address: geoLoc.formatted_address,
     lat: geoLoc.geometry.location.lat,
     lng: geoLoc.geometry.location.lng,

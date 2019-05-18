@@ -10,6 +10,7 @@ export class VacationSpot extends Component {
       pastWeather: [],
       currentWeather: {}
     };
+    this.clickRemove = this.clickRemove.bind(this);
   }
 
   async componentDidMount() {
@@ -29,12 +30,20 @@ export class VacationSpot extends Component {
     this.setState({ pastWeather, currentWeather });
   }
 
+  clickRemove() {
+    const { removeLocation, id } = this.props;
+    removeLocation(id);
+  }
+
   render() {
     const { id, address, lat, lng, countryCode } = this.props.spotInfo;
     return (
       <div className="VacationSpot">
         <h3 className="VacationSpot-title">{address}</h3>
         {this.state.currentDate.format("dddd, MMMM Do YYYY, h:mm:ss a")}
+        <button className="VacastionSpot-remove" onClick={this.clickRemove}>
+          X
+        </button>
       </div>
     );
   }

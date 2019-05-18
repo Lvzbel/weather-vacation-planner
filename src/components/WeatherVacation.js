@@ -17,6 +17,7 @@ export class WeatherVacation extends Component {
       focused: false
     };
     this.addLocation = this.addLocation.bind(this);
+    this.removeLocation = this.removeLocation.bind(this);
   }
 
   async addLocation(loc) {
@@ -27,6 +28,11 @@ export class WeatherVacation extends Component {
       window.localStorage.setItem("userPlaces", JSON.stringify(userPlaces));
       return { userPlaces };
     });
+  }
+
+  removeLocation(id) {
+    const userPlaces = this.state.userPlaces.filter(place => id !== place.id);
+    this.setState({ userPlaces });
   }
 
   componentDidMount() {
@@ -40,6 +46,8 @@ export class WeatherVacation extends Component {
       <VacationSpot
         spotInfo={loc}
         key={loc.id}
+        id={loc.id}
+        removeLocation={this.removeLocation}
         pastOne={pastTime(this.state.date, 1)}
         pastTwo={pastTime(this.state.date, 1)}
         pastThree={pastTime(this.state.date, 1)}
