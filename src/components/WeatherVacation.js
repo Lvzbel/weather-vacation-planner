@@ -58,8 +58,8 @@ export class WeatherVacation extends Component {
         id={loc.id}
         removeLocation={this.removeLocation}
         pastOne={pastTime(this.state.date, 1)}
-        pastTwo={pastTime(this.state.date, 1)}
-        pastThree={pastTime(this.state.date, 1)}
+        pastTwo={pastTime(this.state.date, 2)}
+        pastThree={pastTime(this.state.date, 3)}
       />
     ));
     return (
