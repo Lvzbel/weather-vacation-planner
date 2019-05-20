@@ -1,5 +1,6 @@
 import { darkAPI } from "../API/api";
 import uuid from "uuid/v4";
+import moment from "moment";
 
 export const darkFetch = async (lat, lng, time = "") => {
   const timeString = time ? `,${time}` : time;
@@ -8,7 +9,6 @@ export const darkFetch = async (lat, lng, time = "") => {
       `/forecast/${darkAPI}/${lat},${lng}${timeString}`
     );
     const weather = await response.json();
-    console.log(weather);
     return weather;
   } catch (error) {
     console.log(error);
@@ -20,10 +20,9 @@ export const darkBuildData = async (lat, lng, time = "") => {
   const originalResponse = await darkFetch(lat, lng, time);
   try {
     const currentTemp = originalResponse.currently.temperature || false;
+    const year = moment.unix(originalResponse.currently.time).format("YYYY");
     const weatherCast =
       originalResponse.daily.data[0] || originalResponse.hourly.data[0];
-
-    console.log("Done");
 
     const weatherData = {
       id: uuid(),
@@ -31,7 +30,8 @@ export const darkBuildData = async (lat, lng, time = "") => {
       icon: weatherCast.icon,
       high: weatherCast.temperatureHigh,
       low: weatherCast.temperatureLow,
-      current: currentTemp || weatherCast.temperature
+      current: currentTemp || weatherCast.temperature,
+      year
     };
     return weatherData;
   } catch (error) {
@@ -42,7 +42,8 @@ export const darkBuildData = async (lat, lng, time = "") => {
       icon: undefined,
       high: undefined,
       low: undefined,
-      current: undefined
+      current: undefined,
+      year: undefined
     };
     return weatherData;
   }

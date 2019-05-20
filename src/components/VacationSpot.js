@@ -17,9 +17,6 @@ export class VacationSpot extends Component {
   async componentDidMount() {
     const { pastOne, pastTwo, pastThree } = this.props;
     const { lat, lng } = this.props.spotInfo;
-    console.log("One: ", pastOne);
-    console.log("Two: ", pastTwo);
-    console.log("Three: ", pastThree);
     const oneYear = await darkBuildData(lat, lng, pastOne);
     const twoYears = await darkBuildData(lat, lng, pastTwo);
     const threeYears = await darkBuildData(lat, lng, pastThree);

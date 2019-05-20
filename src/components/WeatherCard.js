@@ -4,10 +4,11 @@ import { prepIconString } from "../functions/iconStingPrep";
 
 export class WeatherCard extends Component {
   render() {
-    const { summary, icon, high, low, current } = this.props.weather;
+    const { year, summary, icon, high, low, current } = this.props.weather;
 
     return (
       <div className="WeatherCard" style={{ border: "1px solid black" }}>
+        <p>{year}</p>
         <p>{`Summary: ${summary}`}</p>
         <Skycons
           className="WeatherCard-icon"
