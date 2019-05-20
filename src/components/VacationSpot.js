@@ -37,12 +37,17 @@ export class VacationSpot extends Component {
   }
 
   render() {
-    const { id, address, lat, lng, countryCode } = this.props.spotInfo;
+    const { address, countryCode } = this.props.spotInfo;
     const pastWeatherCards = this.state.pastWeather.map(weather => (
       <WeatherCard key={weather.id} weather={weather} />
     ));
     return (
       <div className="VacationSpot">
+        <img
+          src={`https://www.countryflags.io/${countryCode}/flat/64.png`}
+          alt=""
+          className="VacationSpot-img"
+        />
         <h3 className="VacationSpot-title">{address}</h3>
         {this.state.currentDate.format("dddd, MMMM Do YYYY, h:mm:ss a")}
         <button className="VacastionSpot-remove" onClick={this.clickRemove}>
