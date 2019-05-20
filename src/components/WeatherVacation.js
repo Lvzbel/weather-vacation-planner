@@ -7,6 +7,7 @@ import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import moment from "moment";
 import { pastTime } from "../functions/time";
+import "../sass/WeatherVacation.scss";
 
 export class WeatherVacation extends Component {
   constructor(props) {
@@ -64,20 +65,25 @@ export class WeatherVacation extends Component {
     ));
     return (
       <div>
-        <h1 className="App-title">Decide where your next vacation will be.</h1>
-        <h4 className="App-title-sub">
+        <h1 className="WeatherVacation-title">
+          Decide where your next vacation will be.
+        </h1>
+        <h4 className="WeatherVacation-sub">
           Just pick the date you are planning to travel and we will show you how
           the weather was the past 3 years the same date.
         </h4>
-        <SearchLocation addLocation={this.addLocation} />
 
-        <SingleDatePicker
-          date={this.state.date}
-          onDateChange={date => this.setState({ date })}
-          focused={this.state.focused}
-          onFocusChange={({ focused }) => this.setState({ focused })}
-          id="calendar"
-        />
+        <div className="WeatherVacation-input-container">
+          <SearchLocation addLocation={this.addLocation} />
+
+          <SingleDatePicker
+            date={this.state.date}
+            onDateChange={date => this.setState({ date })}
+            focused={this.state.focused}
+            onFocusChange={({ focused }) => this.setState({ focused })}
+            id="calendar"
+          />
+        </div>
 
         {vacationLocations}
       </div>
