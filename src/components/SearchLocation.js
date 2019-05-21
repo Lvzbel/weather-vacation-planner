@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../sass/SearchLocation.scss";
 
 export class SearchLocation extends Component {
   constructor(props) {
@@ -36,12 +37,12 @@ export class SearchLocation extends Component {
           type="text"
           id="location"
           className="SearchLocation-input"
-          placeholder="Address or Location"
+          placeholder="Where do you want to go?"
           value={value}
           onChange={this.handleChange}
         />
         <button disabled={value.length < 3} className="SearchLocation-button">
-          Get Location
+          Search
         </button>
       </form>
     );

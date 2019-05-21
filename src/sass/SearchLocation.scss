@@ -1,0 +1,35 @@
+.SearchLocation {
+  max-width: 50rem;
+  display: flex;
+  justify-content: center;
+  &-label {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin: auto 2rem auto 0;
+  }
+  &-input {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid white;
+    height: 4.5rem;
+    padding: 0 1rem;
+    border: none;
+    font-size: 1.8rem;
+  }
+  &-button {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: var(--main-secondary-color);
+    border: 1px solid var(--main-secondary-color);
+    border: none;
+    height: 4.5rem;
+    padding: 1rem 3rem;
+    margin: 0;
+
+    &:hover {
+      background-color: lighten($color: #fc4a1a, $amount: 5%);
+    }
+  }
+}

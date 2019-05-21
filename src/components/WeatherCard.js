@@ -12,7 +12,7 @@ export class WeatherCard extends Component {
         <p>{`Summary: ${summary}`}</p>
         <Skycons
           className="WeatherCard-icon"
-          color="#f7b733"
+          color="white"
           icon={prepIconString(icon)}
           autoplay={true}
           style={{ width: "200px" }}
