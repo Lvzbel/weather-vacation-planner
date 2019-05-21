@@ -27,7 +27,7 @@ export class VacationSpot extends Component {
     const pastWeather = [];
 
     pastWeather.push(oneYear, twoYears, threeYears);
-
+    pastWeather.reverse();
     this.setState({ pastWeather, currentWeather, hasLoaded: true });
   }
 
