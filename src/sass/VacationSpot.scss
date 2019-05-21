@@ -1,0 +1,52 @@
+.VacationSpot {
+  margin: 0 auto;
+  height: 40rem;
+  width: 80%;
+  color: var(--main-text-dark-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+
+  &-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+    padding: 0 2rem;
+    background-color: var(--main-primary-color);
+  }
+
+  &-remove {
+    cursor: pointer;
+    border: none;
+    background-color: var(--main-danger-color);
+    color: var(--main-text-color);
+    border-radius: 50%;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 0;
+    padding: 0 1.5rem;
+    height: 80%;
+    transition: 0.2s all;
+
+    &:hover {
+      background-color: lighten(#e10909, 10%);
+      transform: scale(1.1);
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    height: 85%;
+    padding: 2rem;
+  }
+
+  &-past {
+    display: flex;
+  }
+
+  &-current {
+    display: flex;
+  }
+}

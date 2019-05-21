@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import { darkBuildData } from "../functions/darkFetch";
 import WeatherCard from "./WeatherCard";
+import "../sass/VacationSpot.scss";
 
 export class VacationSpot extends Component {
   constructor(props) {
@@ -40,16 +41,21 @@ export class VacationSpot extends Component {
     ));
     return (
       <div className="VacationSpot">
-        <img
-          src={`https://www.countryflags.io/${countryCode}/flat/64.png`}
-          alt=""
-          className="VacationSpot-img"
-        />
-        <h3 className="VacationSpot-title">{address}</h3>
-        {this.state.currentDate.format("dddd, MMMM Do YYYY, h:mm:ss a")}
-        <button className="VacastionSpot-remove" onClick={this.clickRemove}>
-          X
-        </button>
+        <div className="VacationSpot-info-container">
+          <img
+            src={`https://www.countryflags.io/${countryCode}/flat/64.png`}
+            alt=""
+            className="VacationSpot-img"
+          />
+          <h3 className="VacationSpot-title">{address}</h3>
+          <h3>
+            {this.state.currentDate.format("dddd, MMMM Do YYYY, h:mm:ss a")}
+          </h3>
+          <button className="VacationSpot-remove" onClick={this.clickRemove}>
+            X
+          </button>
+        </div>
+
         <div className="VacationSpot-container">
           <div className="VacationSpot-past">{pastWeatherCards}</div>
           <div className="VacationSpot-current">
