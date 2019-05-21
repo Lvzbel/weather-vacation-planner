@@ -70,9 +70,7 @@ export class VacationSpot extends Component {
             className="VacationSpot-img"
           />
           <h3 className="VacationSpot-title">{address}</h3>
-          <h3>
-            {this.state.currentDate.format("dddd, MMMM Do YYYY, h:mm:ss a")}
-          </h3>
+          <h3>{this.props.date.format("dddd, MMMM Do YYYY")}</h3>
           <button className="VacationSpot-remove" onClick={this.clickRemove}>
             X
           </button>

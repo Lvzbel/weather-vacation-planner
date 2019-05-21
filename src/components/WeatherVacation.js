@@ -61,6 +61,7 @@ export class WeatherVacation extends Component {
         pastOne={pastTime(this.state.date, 1)}
         pastTwo={pastTime(this.state.date, 2)}
         pastThree={pastTime(this.state.date, 3)}
+        date={this.state.date}
       />
     ));
     return (
