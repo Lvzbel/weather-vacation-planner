@@ -1,5 +1,11 @@
+@import "loaders.css/src/animations/line-scale.scss";
+
+.loader-active {
+  display: block;
+}
+
 .VacationSpot {
-  margin: 5rem auto 0 auto;
+  margin: 0 auto 5rem auto;
   height: 40rem;
   width: 80%;
   border-radius: 20px;
@@ -37,8 +43,10 @@
   &-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    align-content: center;
     height: 85%;
-    padding: 2rem;
+    padding: 0 2rem;
   }
 
   &-past {
@@ -47,5 +55,17 @@
 
   &-current {
     display: flex;
+  }
+
+  &-loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-loader {
+    margin: 0 auto;
   }
 }

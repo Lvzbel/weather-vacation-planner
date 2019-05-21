@@ -3,6 +3,7 @@ import moment from "moment";
 import { darkBuildData } from "../functions/darkFetch";
 import WeatherCard from "./WeatherCard";
 import "../sass/VacationSpot.scss";
+import Loader from "react-loaders";
 
 export class VacationSpot extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ export class VacationSpot extends Component {
     this.state = {
       currentDate: moment(),
       pastWeather: [],
-      currentWeather: {}
+      currentWeather: {},
+      hasLoaded: false
     };
     this.clickRemove = this.clickRemove.bind(this);
   }
@@ -26,7 +28,7 @@ export class VacationSpot extends Component {
 
     pastWeather.push(oneYear, twoYears, threeYears);
 
-    this.setState({ pastWeather, currentWeather });
+    this.setState({ pastWeather, currentWeather, hasLoaded: true });
   }
 
   clickRemove() {
@@ -39,6 +41,26 @@ export class VacationSpot extends Component {
     const pastWeatherCards = this.state.pastWeather.map(weather => (
       <WeatherCard key={weather.id} weather={weather} />
     ));
+
+    const loadedWeather = (
+      <React.Fragment>
+        <div className="VacationSpot-past">{pastWeatherCards}</div>
+        <div className="VacationSpot-current">
+          <WeatherCard weather={this.state.currentWeather} />
+        </div>
+      </React.Fragment>
+    );
+
+    const loading = (
+      <div className="VacationSpot-loading-container">
+        <Loader
+          className="VacationSpot-loader"
+          type="line-scale"
+          style={{ transform: "scale(2.5)" }}
+          active
+        />
+      </div>
+    );
     return (
       <div className="VacationSpot">
         <div className="VacationSpot-info-container">
@@ -57,10 +79,7 @@ export class VacationSpot extends Component {
         </div>
 
         <div className="VacationSpot-container">
-          <div className="VacationSpot-past">{pastWeatherCards}</div>
-          <div className="VacationSpot-current">
-            <WeatherCard weather={this.state.currentWeather} />
-          </div>
+          {this.state.hasLoaded ? loadedWeather : loading}
         </div>
       </div>
     );
