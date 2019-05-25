@@ -4,11 +4,6 @@ require("dotenv").config();
 const DARKSKY_API_KEY = process.env.DARK_SKY_API;
 const axios = require("axios");
 
-/* GET home page. */
-router.get("/", function(req, res, next) {
-  res.send(`${DARKSKY_API_KEY}`);
-});
-
 router.post("/weather", (req, res) => {
   const params = req.body;
   const time = params.time ? `,${params.time}` : "";
