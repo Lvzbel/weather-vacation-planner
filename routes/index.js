@@ -6,7 +6,7 @@ const axios = require("axios");
 const path = require("path");
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "react-frontend/build")));
+// app.use(express.static(path.join(__dirname, "react-frontend/build")));
 
 router.post("/weather", (req, res) => {
   const params = req.body;
