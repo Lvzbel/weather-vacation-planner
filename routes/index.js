@@ -3,6 +3,7 @@ var router = express.Router();
 require("dotenv").config();
 const DARKSKY_API_KEY = process.env.DARK_SKY_API;
 const axios = require("axios");
+const path = require("path");
 
 router.use(express.static(path.join(__dirname, "react-frontend/build")));
 
