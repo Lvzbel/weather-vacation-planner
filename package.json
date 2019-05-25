@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "heroku-postbuild": "cd react-frontend && yarn && yarn run build",
+    "heroku-postbuild": "cd react-frontend && npm install && npm run build",
     "Devstart": "node ./bin/www"
   },
   "dependencies": {
