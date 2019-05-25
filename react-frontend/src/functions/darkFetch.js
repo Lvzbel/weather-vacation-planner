@@ -1,13 +1,20 @@
-import { darkAPI } from "../API/api";
 import uuid from "uuid/v4";
 import moment from "moment";
 
 export const darkFetch = async (lat, lng, time = "") => {
-  const timeString = time ? `,${time}` : time;
+  const data = {
+    lat: lat,
+    long: lng,
+    time: time
+  };
   try {
-    const response = await fetch(
-      `/forecast/${darkAPI}/${lat},${lng}${timeString}`
-    );
+    const response = await fetch("/weather", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
     const weather = await response.json();
     return weather;
   } catch (error) {
