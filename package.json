@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./bin/www",
     "heroku-postbuild": "cd react-frontend && yarn && yarn run build",
     "Devstart": "node ./bin/www"
   },
