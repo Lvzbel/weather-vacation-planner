@@ -8,11 +8,8 @@
 # testing
 /coverage
 
-# API keys
-/src/API
-
 # production
-# /build
+/build
 
 # misc
 .DS_Store
