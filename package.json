@@ -2,6 +2,7 @@
   "name": "weather-vacation-planner",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.darksky.net",
   "dependencies": {
     "http-proxy-middleware": "^0.19.1",
     "loaders.css": "^0.1.2",
@@ -38,6 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://api.darksky.net"
+  }
 }
