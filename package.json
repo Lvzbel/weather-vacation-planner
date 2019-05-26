@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "heroku-postbuild": "cd react-frontend && npm install && npm run build",
-    "Devstart": "node ./bin/www"
+    "startDev": "node ./bin/www"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -14,8 +14,9 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "dotenv": "^8.0.0"
+    "morgan": "~1.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "dotenv": "^8.0.0"
+  }
 }
