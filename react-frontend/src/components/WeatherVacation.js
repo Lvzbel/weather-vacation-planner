@@ -86,6 +86,12 @@ export class WeatherVacation extends Component {
           />
         </div>
 
+        <div className="attribution">
+          <a className="attribution-link" href="https://darksky.net/poweredby/">
+            Powered by Dark Sky
+          </a>
+        </div>
+
         {vacationLocations}
       </div>
     );

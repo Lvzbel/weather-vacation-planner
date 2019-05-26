@@ -8,8 +8,6 @@ if (process.env.NODE_ENV !== "production") {
 
 const DARKSKY_API_KEY = process.env.DARK_SKY_API;
 
-console.log(DARKSKY_API_KEY);
-
 // Makes a request to the DarkSky API and returns info object
 
 router.post("/weather", (req, res) => {

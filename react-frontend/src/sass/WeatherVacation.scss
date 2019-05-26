@@ -15,3 +15,15 @@
     margin: 5rem 0;
   }
 }
+
+.attribution {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  padding-bottom: 2rem;
+
+  &-link {
+    color: white;
+    font-size: 1.7rem;
+  }
+}
