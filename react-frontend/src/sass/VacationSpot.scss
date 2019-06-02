@@ -16,26 +16,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.7rem;
     height: 15%;
     padding: 0 2rem;
     background-color: var(--main-primary-color);
   }
 
-  &-remove {
+  &-button {
     cursor: pointer;
     border: none;
-    background-color: var(--main-danger-color);
-    color: var(--main-text-color);
+    background-color: transparent;
+    color: var(--main-danger-color);
     border-radius: 50%;
-    font-size: 2.2rem;
+    font-size: 4rem;
     font-weight: bold;
     line-height: 0;
-    padding: 0 1.5rem;
-    height: 80%;
     transition: 0.2s all;
 
     &:hover {
-      background-color: lighten(#e10909, 10%);
       transform: scale(1.1);
     }
   }

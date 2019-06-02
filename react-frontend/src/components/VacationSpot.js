@@ -4,6 +4,8 @@ import { darkBuildData } from "../functions/darkFetch";
 import WeatherCard from "./WeatherCard";
 import "../sass/VacationSpot.scss";
 import Loader from "react-loaders";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export class VacationSpot extends Component {
   constructor(props) {
@@ -71,8 +73,11 @@ export class VacationSpot extends Component {
           />
           <h3 className="VacationSpot-title">{address}</h3>
           <h3>{this.props.date.format("dddd, MMMM Do YYYY")}</h3>
-          <button className="VacationSpot-remove" onClick={this.clickRemove}>
-            X
+          <button className="VacationSpot-button" onClick={this.clickRemove}>
+            <FontAwesomeIcon
+              className="VacationSpot-icon"
+              icon={faTimesCircle}
+            />
           </button>
         </div>
 

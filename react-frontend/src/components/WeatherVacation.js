@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { SearchLocation } from "./SearchLocation";
 import { geoLocation } from "../functions/Geo";
 import { VacationSpot } from "./VacationSpot";
 import "react-dates/initialize";
