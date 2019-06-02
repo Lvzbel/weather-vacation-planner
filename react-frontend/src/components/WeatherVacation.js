@@ -78,13 +78,18 @@ export class WeatherVacation extends Component {
 
         <div className="WeatherVacation-input-container">
           <SearchBar addLocation={this.addLocation} />
-          <SingleDatePicker
-            date={this.state.date}
-            onDateChange={date => this.setState({ date })}
-            focused={this.state.focused}
-            onFocusChange={({ focused }) => this.setState({ focused })}
-            id="calendar"
-          />
+          <div className="calendar">
+            <label htmlFor="calendar" className="SearchLocation-label">
+              Select a date:
+            </label>
+            <SingleDatePicker
+              date={this.state.date}
+              onDateChange={date => this.setState({ date })}
+              focused={this.state.focused}
+              onFocusChange={({ focused }) => this.setState({ focused })}
+              id="calendar"
+            />
+          </div>
         </div>
 
         <div className="attribution">

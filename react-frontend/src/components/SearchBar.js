@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
     return (
       <div className="SearchBar">
         <label htmlFor="autocomplete" className="SearchLocation-label">
-          Search Location
+          Search Location:
         </label>
         <input
           ref={this.autocompleteInput}
