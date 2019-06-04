@@ -72,7 +72,9 @@ export class VacationSpot extends Component {
             className="VacationSpot-img"
           />
           <h3 className="VacationSpot-title">{address}</h3>
-          <h3>{this.props.date.format("dddd, MMMM Do YYYY")}</h3>
+          <h3 className="VacationSpot-date">
+            {this.props.date.format("dddd, MMMM Do YYYY")}
+          </h3>
           <button className="VacationSpot-button" onClick={this.clickRemove}>
             <FontAwesomeIcon
               className="VacationSpot-icon"

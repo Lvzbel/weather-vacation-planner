@@ -1,3 +1,4 @@
+@import "./sass/BreakPoints.scss";
 *,
 *::after,
 *::before {
@@ -7,6 +8,28 @@
 
 html {
   font-size: 62.5%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-micro) {
+    font-size: 47%;
+  }
+
+  @media only screen and (min-width: $bp-2k) {
+    font-size: 80%;
+  }
+
+  @media only screen and (min-width: $bp-4k) {
+    font-size: 125%;
+  }
 }
 
 body {

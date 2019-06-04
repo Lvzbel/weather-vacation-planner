@@ -18,9 +18,11 @@ export class WeatherCard extends Component {
           autoplay={true}
           style={{ width: "150px" }}
         />
-        <p className="WeatherCard-high WeatherCard-temp">{`High: ${high}`}</p>
-        <p className="WeatherCard-low WeatherCard-temp">{`Low: ${low}`}</p>
-        <p className="WeatherCard-current WeatherCard-temp">{`Current: ${current}`}</p>
+        <div className="WeatherCard-temps">
+          <p className="WeatherCard-high WeatherCard-temp">{`High: ${high}`}</p>
+          <p className="WeatherCard-low WeatherCard-temp">{`Low: ${low}`}</p>
+          <p className="WeatherCard-current WeatherCard-temp">{`Current: ${current}`}</p>
+        </div>
       </div>
     );
   }

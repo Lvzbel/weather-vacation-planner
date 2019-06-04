@@ -7,7 +7,6 @@ import "react-dates/lib/css/_datepicker.css";
 import moment from "moment";
 import { pastTime } from "../functions/time";
 import "../sass/WeatherVacation.scss";
-// Test
 import SearchBar from "./SearchBar";
 
 export class WeatherVacation extends Component {
@@ -77,8 +76,8 @@ export class WeatherVacation extends Component {
 
         <div className="WeatherVacation-input-container">
           <SearchBar addLocation={this.addLocation} />
-          <div className="calendar">
-            <label htmlFor="calendar" className="SearchLocation-label">
+          <div className="">
+            <label htmlFor="calendar" className="calendar-label">
               Select a date:
             </label>
             <SingleDatePicker

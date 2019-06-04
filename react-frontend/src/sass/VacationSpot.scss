@@ -1,3 +1,4 @@
+@import "./BreakPoints.scss";
 @import "loaders.css/src/animations/line-scale.scss";
 
 .loader-active {
@@ -12,6 +13,12 @@
   overflow: hidden;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 
+  @media only screen and (max-width: $bp-medium) {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
   &-info-container {
     display: flex;
     align-items: center;
@@ -20,6 +27,16 @@
     height: 15%;
     padding: 0 2rem;
     background-color: var(--main-primary-color);
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-date {
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
   }
 
   &-button {
@@ -45,14 +62,33 @@
     align-content: center;
     height: 85%;
     padding: 0 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &-past {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
   }
 
   &-current {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
   }
 
   &-loading-container {

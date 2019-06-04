@@ -1,6 +1,6 @@
 import React from "react";
 /* global google */
-import "../sass/SearchLocation.scss";
+import "../sass/SearchBar.scss";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -27,14 +27,14 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="SearchBar">
-        <label htmlFor="autocomplete" className="SearchLocation-label">
+        <label htmlFor="autocomplete" className="SearchBar-label">
           Search Location:
         </label>
         <input
           ref={this.autocompleteInput}
           id="autocomplete"
-          className="SearchLocation-input1"
-          placeholder="Enter your address"
+          className="SearchBar-input"
+          placeholder="Where do you want to go?"
           type="text"
         />
       </div>
