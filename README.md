@@ -25,7 +25,7 @@ To achieve this a small Nodejs server was used and hide the API key in the backe
 
 ### Todos
 
-- Remove bug where spacing is different in production and development envoriments.
+- ~~Remove bug where spacing is different in production and development envoriments.~~
 - Make the web app responsive.
 - Use travel advisory API.
 - Update suggestions when typing a location using the Google API
