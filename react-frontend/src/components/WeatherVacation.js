@@ -86,6 +86,7 @@ export class WeatherVacation extends Component {
               onDateChange={date => this.setState({ date })}
               focused={this.state.focused}
               onFocusChange={({ focused }) => this.setState({ focused })}
+              numberOfMonths={1}
               id="calendar"
             />
           </div>
