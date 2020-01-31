@@ -13,9 +13,9 @@ const DARKSKY_API_KEY = process.env.DARK_SKY_API;
 router.post("/weather", (req, res) => {
   const params = req.body;
   const time = params.time ? `,${params.time}` : "";
-  const url = `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${
-    params.lat
-  },${params.long}${time}`;
+  const url = `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${params.lat},${params.long}${time}`;
+  console.log(DARKSKY_API_KEY);
+  console.log(url);
 
   axios({
     url: url,

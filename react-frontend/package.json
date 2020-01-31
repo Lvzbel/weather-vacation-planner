@@ -2,8 +2,12 @@
   "name": "weather-vacation-planner",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "dependencies": {
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.5.3",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
     "http-proxy-middleware": "^0.19.1",
     "loaders.css": "^0.1.2",
     "moment": "^2.24.0",
@@ -14,9 +18,10 @@
     "react-dom": "^16.8.6",
     "react-loaders": "^3.0.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.3.1",
     "react-skycons": "^0.7.0",
     "sanitize.css": "^9.0.0",
+    "typescript": "^3.7.5",
     "uuid": "^3.3.2"
   },
   "scripts": {

@@ -7,6 +7,7 @@ export const darkFetch = async (lat, lng, time = "") => {
     long: lng,
     time: time
   };
+
   try {
     const response = await fetch("/weather", {
       method: "POST",
@@ -18,7 +19,7 @@ export const darkFetch = async (lat, lng, time = "") => {
     const weather = await response.json();
     return weather;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
 
