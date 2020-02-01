@@ -1,4 +1,4 @@
-export const prepIconString = iconName => {
+export const prepIconString = (iconName: string): string => {
   if (iconName !== undefined) {
     return iconName
       .toUpperCase()
