@@ -9,7 +9,7 @@ import { pastTime } from "../functions/time";
 import "../sass/WeatherVacation.scss";
 import SearchBar from "./SearchBar";
 
-interface IUserPlaces {
+export interface IUserPlaces {
   address: string;
   countryCode: string;
   id: string;
@@ -17,9 +17,9 @@ interface IUserPlaces {
   lng: number;
 }
 
-interface IAppProps {}
+export interface IAppProps {}
 
-interface IAppState {
+export interface IAppState {
   userPlaces: Array<IUserPlaces>;
   focused: boolean;
   date: moment.Moment;
