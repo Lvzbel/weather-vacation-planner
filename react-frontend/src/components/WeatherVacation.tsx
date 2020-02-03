@@ -21,8 +21,8 @@ export interface IAppProps {}
 
 export interface IAppState {
   userPlaces: Array<IUserPlaces>;
-  focused: boolean;
-  date: moment.Moment;
+  focused: boolean | any;
+  date: moment.Moment | null;
 }
 
 export class WeatherVacation extends Component<IAppProps, IAppState> {
@@ -37,7 +37,7 @@ export class WeatherVacation extends Component<IAppProps, IAppState> {
     this.removeLocation = this.removeLocation.bind(this);
   }
 
-  async addLocation(loc) {
+  async addLocation(loc: string) {
     // add location will clean the string and getting it ready for the the Geo API call. It removes all symbols that people tent to put on addresses
     const location = await geoLocation(loc);
     this.setState(st => {
@@ -47,18 +47,18 @@ export class WeatherVacation extends Component<IAppProps, IAppState> {
     });
   }
 
-  removeLocation(id) {
+  removeLocation(id: string) {
     const userPlaces = this.state.userPlaces.filter(place => id !== place.id);
     this.setState({ userPlaces });
   }
 
   componentDidMount() {
-    const storedPlaces =
-      JSON.parse(window.localStorage.getItem("userPlaces")) || [];
+    const test: any = window.localStorage.getItem("userPlaces");
+    const storedPlaces = JSON.parse(test) || [];
     this.setState({ userPlaces: storedPlaces });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: IAppProps, prevState: IAppState) {
     if (prevState.userPlaces.length !== this.state.userPlaces.length) {
       window.localStorage.setItem(
         "userPlaces",
