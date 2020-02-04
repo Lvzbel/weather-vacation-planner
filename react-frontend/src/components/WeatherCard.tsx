@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Skycons from "react-skycons";
 import { prepIconString } from "../functions/iconStingPrep";
 import "../sass/WeatherCard.scss";
+import { IAppProps } from "./WeatherVacation";
 
-export class WeatherCard extends Component {
+export class WeatherCard extends Component<IAppProps> {
   render() {
     const { year, summary, icon, high, low, current } = this.props.weather;
 
